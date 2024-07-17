@@ -10,3 +10,28 @@
   margin-bottom: 0.5rem;
   cursor: move;
 }
+
+.bottomWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status {
+  font-size: small;
+  background: var(--COLOR-GRAY-LIGHT);
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+
+.ONGOING {
+  background: var(--COLOR-ONGOING);
+}
+
+.DONE {
+  background: var(--COLOR-DONE);
+}
+
+.task img {
+  height: 1.25rem;
+  cursor: pointer;
+}
