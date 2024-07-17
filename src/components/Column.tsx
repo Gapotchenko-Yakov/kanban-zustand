@@ -10,10 +10,14 @@ const Column = ({ state }) => {
     (store) => store.tasks.filter((task) => task.state === state),
     shallow
   );
+  const addTask = useStore((store) => store.addTask);
 
   return (
     <div className="column">
-      <p>{state}</p>
+      <div className="titleWrapper">
+        <p>{state}</p>
+        <button onClick={() => addTask("asd" + state, state)}>Add</button>
+      </div>
       {tasks.map((task) => (
         <Task title={task.title} />
       ))}
