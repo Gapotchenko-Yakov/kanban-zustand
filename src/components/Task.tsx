@@ -2,16 +2,19 @@ import React from "react";
 
 import "./Task.css";
 import classNames from "classnames";
-
-const STATUS = "PLANNED";
+import { useStore } from "../store";
 
 const Task = ({ title }) => {
+  const task = useStore((store) =>
+    store.tasks.find((task) => task.title === title)
+  );
+
   return (
     <div className="task">
       <div>{title}</div>
       <div className="bottomWrapper">
         <div></div>
-        <div className={classNames("status", STATUS)}>{STATUS}</div>
+        <div className={classNames("status", task?.state)}>{task?.state}</div>
       </div>
     </div>
   );

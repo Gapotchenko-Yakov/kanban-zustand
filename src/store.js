@@ -1,6 +1,6 @@
-const { create } = require("zustand");
+import { create } from "zustand";
 
-const store = (set = {
+const store = (set) => ({
   tasks: [
     {
       title: "TestTask",
